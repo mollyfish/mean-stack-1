@@ -1,4 +1,5 @@
 .connection-links {
+  @include flex-container(inline-flex,row,nowrap,center);
   position: relative;
   width: 8em;
   height: 8em;
@@ -14,13 +15,14 @@
   }
 }
 .connection-links__text {
-  @include flex-container(row,nowrap,center);
   font-family: $main-font-bold;
-  text-align: center;
   text-transform: uppercase;
 }
+.connection-links__icon {
+  color: red;
+}
 .connection-links__icon:before {
-  @include flex-container(row,nowrap,center);
+  @include flex-container(flex,row,nowrap,center);
   position: absolute;
   top: -0.4em;
   left: -0.4em;
