@@ -17,8 +17,8 @@
   font-variant: normal;
   text-transform: none;
   line-height: 1;
-
-  /* Better Font Rendering =========== */
+  // Needs color variable
+  color: white;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -36,4 +36,14 @@ $icons:
   .icon-#{nth($icon, 1)}:before {
     content:nth($icon, 2);
   }
+}
+
+.icon-style {
+  width: 21px;
+  height: 21px;
+  // Needs color variable
+  border: 1px solid black;
+  border-radius: 50%;
+  // Needs color variable
+  background-color: black;
 }
