@@ -16,7 +16,7 @@
   font-weight: normal;
   font-variant: normal;
   text-transform: none;
-  line-height: 4;
+  line-height: 2;
   // Needs color variable
   color: white;
   -webkit-font-smoothing: antialiased;
@@ -40,10 +40,18 @@ $icons:
 
 .icon-style {
   font-size: 100%;
-  // Needs color variable
-  border: 1px solid black;
   border-radius: 50%;
   padding: .3em;
   // Needs color variable
   background-color: black;
 }
+.icon-pinterest:before {
+  font-size: 150%;
+  color: black;
+}
+.icon-menu:before {
+  font-size: 150%;
+  color: black;
+}
+
+
