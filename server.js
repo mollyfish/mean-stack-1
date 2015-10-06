@@ -1,13 +1,10 @@
 var express = require('express');
 var app = express();
-
+app.use(express.static(__dirname + '/public'));
 app.get('/', function(req, res){
   res.status(200).sendFile('public/index.html', {root: __dirname + '/'});
 });
-app.get('/index', function(req, res){
-  res.status(200).sendFile('public/index.html', {root: __dirname + '/'});
-});
-app.get('/index.html', function(req, res){
+app.get('/index*', function(req, res){
   res.status(200).sendFile('public/index.html', {root: __dirname + '/'});
 });
 app.get('/*', function(req, res){
