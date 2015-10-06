@@ -22,6 +22,7 @@
     "gulp-sass": "^2.0.4"
   },
   "dependencies": {
+    "angular": "^1.4.7",
     "express": "^4.13.3",
     "mongoose": "^4.1.10"
   }
