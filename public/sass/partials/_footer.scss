@@ -1,6 +1,15 @@
 footer {
-  font-family: $main-font-light;
+  @include flex-container(row,nowrap);
+  font-family: $main-font-medium;
+  font-size: .4em;
+  border-top: 1px solid $border-color-med;
+  padding-top: 3em;
   ul {
     text-transform: uppercase;
+  }
+  li {
+    padding-left: 2em;
+    padding-right: 2em;
+    display: inline;
   }
 }
