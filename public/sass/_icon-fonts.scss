@@ -16,7 +16,7 @@
   font-weight: normal;
   font-variant: normal;
   text-transform: none;
-  line-height: 1;
+  line-height: 4;
   // Needs color variable
   color: white;
   -webkit-font-smoothing: antialiased;
@@ -39,11 +39,11 @@ $icons:
 }
 
 .icon-style {
-  width: 21px;
-  height: 21px;
+  font-size: 100%;
   // Needs color variable
   border: 1px solid black;
   border-radius: 50%;
+  padding: .3em;
   // Needs color variable
   background-color: black;
 }
