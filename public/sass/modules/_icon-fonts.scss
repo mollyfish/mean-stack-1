@@ -1,0 +1,40 @@
+@font-face {
+  font-family: 'icomoon';
+  src:url('fonts/icomoon.eot?j42c1j');
+  src:url('fonts/icomoon.eot?j42c1j#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?j42c1j') format('truetype'),
+    url('fonts/icomoon.woff?j42c1j') format('woff'),
+    url('fonts/icomoon.svg?j42c1j#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  font-family: 'icomoon';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 2;
+  color: $text-color-light;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+$icons:
+(menu '\20')
+(google-plus '\e800')
+(facebook '\e801')
+(twitter '\e802')
+(linkedin '\e803')
+(pinterest '\e804')
+;
+
+@each $icon in $icons {
+  .icon-#{nth($icon, 1)}:before {
+    content:nth($icon, 2);
+  }
+}
+
+
