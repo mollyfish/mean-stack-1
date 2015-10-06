@@ -14,14 +14,13 @@
   }
 }
 .connection-links__text {
-  @include flex-container(row,nowrap);
-  padding: 1em;
+  @include flex-container(row,nowrap,center);
   font-family: $main-font-bold;
   text-align: center;
   text-transform: uppercase;
 }
 .connection-links__icon:before {
-  @include flex-container(row,nowrap);
+  @include flex-container(row,nowrap,center);
   position: absolute;
   top: -0.4em;
   left: -0.4em;

@@ -1,0 +1,14 @@
+.contact {
+  @include flex-container(row,wrap,space-between);
+  padding: 2em 0;
+  .connection-links {
+    float: right;
+    margin: 0 0 0 2em;
+  }
+}
+.contact--method {
+  a[href="tel:6624076792"],
+  a[href="mailto:contact@intell.com"] {
+    display: block;
+  }
+}
