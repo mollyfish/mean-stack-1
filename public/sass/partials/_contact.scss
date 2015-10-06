@@ -1,29 +1,48 @@
 .contact {
-  @include flex-container(row,wrap,space-between);
-  padding: 2em 0;
+  @include flex-container(column,wrap,space-around);
+  color: green;
+  text-align: center;
+  margin-top: 2em;
+  @include breaks(phone) {
+    flex-direction: row;
+    color: black;
+    text-align: left;
+  }
   .connection-links {
-    float: right;
-    margin-left: 2em;
+    // float: right;
+    // margin-left: 2em;
     color: blue;
+    margin-bottom: 2em;
     @include breaks(phone) {
       color: red;
       float: right;
+      margin-bottom: 0;
+      margin-left: 2em;
+    //   float: none;
+    //   // @include flex-container(row,nowrap,center);
+    }
+  }
+}
+.contact__method {
+  margin-top: 0;
+  @include breaks(phone) {
+    margin-top: 2em;
+  }
+  a[href="tel:6624076792"],
+  a[href="mailto:contact@intell.com"] {
+    display: block;
+    color: red;
+    text-align: center;
+    @include breaks(phone) {
+      text-align: left;
     }
   }
 }
 
 
-// .sidebar {
-//   width: 33.33%;
-//   @include bp(baby-bear) {
-//     width: 100%;
-//   }
-// }
-
-.contact__method {
-  a[href="tel:6624076792"],
-  a[href="mailto:contact@intell.com"] {
-    display: block;
-    color: red;
-  }
-}
+//   display: flex;
+//   flex-direction: column;
+//   flex-wrap: wrap;
+//   justify-content: space-around;
+//   align-content: center;
+//   align-items: center;
