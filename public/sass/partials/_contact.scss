@@ -3,12 +3,27 @@
   padding: 2em 0;
   .connection-links {
     float: right;
-    margin: 0 0 0 2em;
+    margin-left: 2em;
+    color: blue;
+    @include breaks(phone) {
+      color: red;
+      float: right;
+    }
   }
 }
-.contact--method {
+
+
+// .sidebar {
+//   width: 33.33%;
+//   @include bp(baby-bear) {
+//     width: 100%;
+//   }
+// }
+
+.contact__method {
   a[href="tel:6624076792"],
   a[href="mailto:contact@intell.com"] {
     display: block;
+    color: red;
   }
 }
