@@ -17,8 +17,7 @@
   font-variant: normal;
   text-transform: none;
   line-height: 2;
-  // Needs color variable
-  color: white;
+  color: $text-color-light;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -36,22 +35,6 @@ $icons:
   .icon-#{nth($icon, 1)}:before {
     content:nth($icon, 2);
   }
-}
-
-.icon-style {
-  font-size: 100%;
-  border-radius: 50%;
-  padding: .3em;
-  // Needs color variable
-  background-color: black;
-}
-.icon-pinterest:before {
-  font-size: 150%;
-  color: black;
-}
-.icon-menu:before {
-  font-size: 150%;
-  color: black;
 }
 
 
