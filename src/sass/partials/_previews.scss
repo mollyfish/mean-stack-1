@@ -1,7 +1,7 @@
 .previews {
   margin: 0 20% 2em 20%;
   padding: 2em 0;
-  article[data-ng-repeat="item in items"] {
+  article {
     border-bottom: 1px solid $border-color-med;
     padding: 2em 0;
   }
