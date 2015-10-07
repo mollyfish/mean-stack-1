@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" ng-app="CRUDblog">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -9,7 +9,11 @@
     <link rel="stylesheet" href="css/main.css">
   </head>
   <body>
-    <p>Hello world! This is HTML5 Boilerplate.</p>
+    <div ng-controller="MainCtrl"> <!-- the ng- will fail an HTML validator, so you can pass a validator by including data-ng- instead -->
+      <p>Hello {{greeting}} This is HTML5 Boilerplate.</p>
+    </div>
+    <p>{{greeting}}</p>  <!-- This won't render b/c the scope is wrong -->
+    <script src="../node_modules/angular/angular.js"></script>
     <script src="js/index.js"></script>
   </body>
 </html>
