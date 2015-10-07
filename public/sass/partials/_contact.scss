@@ -1,5 +1,5 @@
 .contact {
-  padding-bottom: 2em;
+  // padding-bottom: 0.5em;
   @include flex-container(flex,row,wrap,space-around);
   text-align: center;
   .connection-links {
