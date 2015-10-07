@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" ng-app="CRUDblog">
+<html lang="en" data-ng-app="CRUDblog">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -9,8 +9,19 @@
     <link rel="stylesheet" href="css/main.css">
   </head>
   <body>
-    <section class="previews" ng-controller="PreviewCtrl">
-      <post-preview info="post"></post-preview>
+    <section class="previews" data-ng-controller="PreviewCtrl">
+      <article data-ng-repeat="item in items">
+        <h1>{{item.title}}</h1>
+        <p>{{item.body}}</p>
+        <div class="post-data">
+          <ul>
+            <li>By {{item.author}}</li>
+            <li>{{item.date}}</li>
+            <li>{{item.comments}} comments</li>
+          </ul>
+          <a class="btn btn__text btn--dark">Read More</a>
+        </div>
+      </article>
     </section>
     <script src="js/packed.js"></script>
   </body>

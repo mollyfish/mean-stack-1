@@ -1,7 +1,10 @@
 .previews {
-  margin: 0 10%;
-  padding-bottom: 2em;
-  border-bottom: 1px solid $border-color-med;
+  margin: 0 20% 2em 20%;
+  padding: 2em 0;
+  article[data-ng-repeat="item in items"] {
+    border-bottom: 1px solid $border-color-med;
+    padding: 2em 0;
+  }
   h1 {
     font-family: $main-font-regular;
     font-size: 200%;
@@ -13,24 +16,35 @@
     line-height: 1.7;
     margin: 0 0 2em 0;
   }
+  .post-data {
+    @include flex-container(flex,row,wrap,space-between);
+  }
   .btn {
-    display: inline-block;
+    width: 100%;
+    margin-top: 1em;
+    @include breaks(desktop) {
+      width: 10em;
+      margin-top: 0;
+    }
   }
   ul {
-    display: inline-block;
+    @include flex-container(flex,row,wrap,center);
   }
   li {
-    margin: 0 1em;
+    margin: 0.5em 1em;
     display: inline;
   }
   li:before {
-    content: ".";
+    content: "";
     display: inline-block;
     position: relative;
     bottom: 0.25em;
     right: 1em;
+    @include breaks(desktop) {
+      content: ".";
+    }
   }
   li:first-child:before {
     content: "";
-}
+  }
 }
