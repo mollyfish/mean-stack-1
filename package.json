@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/mollyfish/mean-stack-1.git"
   },
-  "author": "Molly Kent <kent.molly@gmail.com>",
+  "author": "Molly Kent <kent.molly@gmail.com>", "Zach Gordon <zachkgordon@gmail.com>"
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/mollyfish/mean-stack-1/issues"

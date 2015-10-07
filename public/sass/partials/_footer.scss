@@ -1,10 +1,15 @@
 footer {
-  @include flex-container(flex,row,nowrap,center);
+  p {
+    padding-bottom: 1em;
+  }
+  @include flex-container(flex,row,wrap,center);
   font-family: $main-font-medium;
   font-size: .4em;
   border-top: 1px solid $border-color-med;
   padding-top: 3em;
   ul {
+    padding-bottom: 1em;
+    text-align: center;
     text-transform: uppercase;
   }
   li {
