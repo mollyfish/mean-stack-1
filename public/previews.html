@@ -3,17 +3,15 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Crud Blog</title>
+    <title>Previews</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <link rel="stylesheet" href="css/main.css">
   </head>
   <body>
-    <div ng-controller="PreviewCtrl">
-      <post-preview info="zach"></post-preview>
-      <hr>
-      <post-preview info="molly"></post-preview>
-    </div>
+    <section class="previews" ng-controller="PreviewCtrl">
+      <post-preview info="post"></post-preview>
+    </section>
     <script src="js/packed.js"></script>
   </body>
 </html>

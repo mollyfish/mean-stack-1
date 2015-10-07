@@ -1,0 +1,36 @@
+.previews {
+  margin: 0 10%;
+  padding-bottom: 2em;
+  border-bottom: 1px solid $border-color-med;
+  h1 {
+    font-family: $main-font-regular;
+    font-size: 200%;
+    margin-bottom: 1em;
+  }
+  p {
+    font-family: $main-font-regular;
+    font-size: 100%;
+    line-height: 1.7;
+    margin: 0 0 2em 0;
+  }
+  .btn {
+    display: inline-block;
+  }
+  ul {
+    display: inline-block;
+  }
+  li {
+    margin: 0 1em;
+    display: inline;
+  }
+  li:before {
+    content: ".";
+    display: inline-block;
+    position: relative;
+    bottom: 0.25em;
+    right: 1em;
+  }
+  li:first-child:before {
+    content: "";
+}
+}

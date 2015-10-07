@@ -1,6 +1,9 @@
-<h1>{{title}}</h1>
-<p>{{preview}}</p>
-<span>By {{author}}</span><span>.</span>
-<span>{{published}}</span><span>.</span>
-<span>{{numberOf}} comments</span>
+
+<h1>{{postInfo.title}}</h1>
+<p>{{postInfo.body}}</p>
+<ul>
+  <li>By {{postInfo.author}}</li>
+  <li>{{postInfo.date}}</li>
+  <li>{{postInfo.comments}} comments</li>
+</ul>
 <a class="btn btn__text btn--dark">Read More</a>
