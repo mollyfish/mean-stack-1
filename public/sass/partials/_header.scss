@@ -1,46 +1,62 @@
 header {
   background-color: $background-color-dark;
-}
-
-h1 {
-  color: $text-color-light;
-  font-size: 1.5em;
-  padding-bottom: 1em;
-  text-align: center;
-}
-ul li {
+  h1 {
     color: $text-color-light;
-}
-
-input[type=checkbox] {
-  display: none;
-}
-.icon-menu:before {
-  color: white;
-}
-
-@media only screen and (min-width: 600px) {
-  .icon-menu {
+    font-size: 1.5em;
+    padding-bottom: 1em;
+    text-align: center;
+  }
+  ul li {
+    display: none;
+    padding-left: .5em;
+    padding-bottom: .3em;
+    color: $text-color-light;
+    span {
+      display: none;
+    }
+  }
+  .icon-menu3:before {
+    padding-left: .5em;
+    color: $text-color-light;
+  }
+  input[type=checkbox] {
     display: none;
   }
-  h1 {
-    position: absolute;
-    padding-top: 1.9em;
-    padding-left: 1.9em;
-    padding-bottom: 1.9em;
+  input[type=checkbox]:checked ~ ul li {
+  display: block;
   }
-  ul {
-    position: relative;
-    padding-top: 5em;
-    padding-right: 5em;
-    padding-bottom: 5em;
-    font-size: .7em;
-    text-transform: uppercase;
-    li {
-      padding-left: 1em;
-      padding-right: 1em;
-      float: right;
-      display: inline;
+}
+h4 {
+  color: green;
+}
+@media only screen and (min-width: 650px) {
+  header {
+    .icon-menu3 {
+      display: none;
+    }
+    h1 {
+      position: absolute;
+      padding-top: 1.9em;
+      padding-left: 1.9em;
+      padding-bottom: 1.9em;
+    }
+    ul {
+      position: relative;
+      padding-top: 5em;
+      padding-right: 5em;
+      padding-bottom: 5em;
+      font-size: .7em;
+      text-transform: uppercase;
+      li {
+        padding-left: 1em;
+        padding-right: 1em;
+        float: right;
+        display: inline;
+        span {
+          display: inline;
+          color: $text-color-light;
+        }
+      }
     }
   }
 
