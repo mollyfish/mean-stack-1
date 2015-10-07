@@ -1,7 +1,7 @@
-var app = angular.module("CRUDblog",[]);
+// var app = angular.module("CRUDblog",[]);
 
-function MainCtrl ($scope) {
-  $scope.greeting = "world!";
-}
+// function MainCtrl ($scope) {
+//   $scope.greeting = "world!";
+// }
 
-app.controller("MainCtrl", MainCtrl);
+// app.controller("MainCtrl", MainCtrl);
