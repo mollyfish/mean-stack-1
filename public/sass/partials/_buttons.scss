@@ -34,11 +34,11 @@
   }
 }
 .btn--theme {
-  background-color: $background-color-theme;
-  color: $text-color-light;
+  background-color: $background-color-light;
+  color: $text-color-theme;
   border: 1px solid $border-color-light;
   &:hover {
-    background-color: $background-color-light;
-    color: $text-color-theme;
+    background-color: $background-color-theme;
+    color: $text-color-light;
   }
 }
