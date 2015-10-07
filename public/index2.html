@@ -9,6 +9,11 @@
     <link rel="stylesheet" href="css/main.css">
   </head>
   <body>
+    <div ng-controller="Controller">
+      <my-customer info="zach"></my-customer>
+      <hr>
+      <my-customer info="molly"></my-customer>
+    </div>
     <header>
       <h1>intelly</h1>
       <nav>
@@ -92,8 +97,7 @@
         <li>Support</li>
       </ul>
     </footer>
-    <script src="../node_modules/angular/angular.js"></script>
-    <script src="js/index.js"></script>
+    <script src="js/packed.js"></script>
   </body>
 </html>
 
