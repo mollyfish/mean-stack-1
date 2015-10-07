@@ -1,4 +1,5 @@
 footer {
+
   @include flex-container(flex,row,nowrap,center);
   font-family: $main-font-medium;
   font-size: .4em;
