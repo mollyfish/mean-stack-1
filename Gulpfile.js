@@ -19,6 +19,6 @@ gulp.task("webpack", function(callback) {
 });
 
 gulp.task("default", ["webpack", "sass"], function() {
-  gulp.watch("/public/sass/**/*.scss", ["sass"]);
-  gulp.watch(["public/js/**/*.js"], ["webpack"]);
+  gulp.watch("./public/sass/**/*.scss", ["sass"]);
+  gulp.watch("./public/js/**/*.js", ["webpack"]);
 });
