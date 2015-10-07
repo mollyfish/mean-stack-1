@@ -9,12 +9,14 @@
     <link rel="stylesheet" href="css/main.css">
   </head>
   <body>
-    <div ng-controller="MainCtrl"> <!-- the ng- will fail an HTML validator, so you can pass a validator by including data-ng- instead -->
-      <p>Hello {{greeting}} This is HTML5 Boilerplate.</p>
+    <div ng-controller="Controller">
+      <my-customer info="naomi"></my-customer>
+      <hr>
+      <my-customer info="igor"></my-customer>
     </div>
-    <p>{{greeting}}</p>  <!-- This won't render b/c the scope is wrong -->
-    <script src="../node_modules/angular/angular.js"></script>
-    <script src="js/index.js"></script>
+    <!-- <article data-ng-controller="PreviewCtrl" data-ng-include="'post-preview.html'">
+    </article> -->
+    <script src="js/packed.js"></script>
   </body>
 </html>
 
