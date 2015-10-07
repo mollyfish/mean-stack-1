@@ -10,7 +10,10 @@
     "type": "git",
     "url": "git+https://github.com/mollyfish/mean-stack-1.git"
   },
-  "author": "Molly Kent <kent.molly@gmail.com>", "Zach Gordon <zachkgordon@gmail.com>"
+  "author": [
+    "Molly Kent <kent.molly@gmail.com>",
+    "Zach Gordon <zachkgordon@gmail.com>"
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/mollyfish/mean-stack-1/issues"
@@ -24,8 +27,8 @@
   "dependencies": {
     "angular": "^1.4.7",
     "express": "^4.13.3",
-    "gulp-express": "^0.3.5",
     "mongoose": "^4.1.10",
-    "webpack": "^1.12.2"
+    "webpack": "^1.12.2",
+    "webpack-stream": "^2.1.1"
   }
 }
