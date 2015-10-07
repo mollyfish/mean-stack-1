@@ -15,6 +15,16 @@ header {
       display: none;
     }
   }
+  ul li:before {
+    content: ".";
+    display: inline-block;
+    position: relative;
+    bottom: 0.25em;
+    right: 1em;
+  }
+  ul li:last-child:before {
+    content: "";
+  }
   .icon-menu3:before {
     padding-left: .5em;
     color: $text-color-light;

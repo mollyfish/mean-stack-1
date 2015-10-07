@@ -12,9 +12,18 @@
   font-family: $main-font-bold;
   float: left;
   color: $text-color-dark;
-  span {
+  a {
+    margin: 0 0.25em;
+  }
+  a:before {
+    content: ".";
+    display: inline-block;
     position: relative;
-    top: -0.25em;
+    bottom: 0.25em;
+    right: 0.4em;
+  }
+  a:first-child:before {
+    content: "";
   }
 }
 .secondary-nav__justify-R {
