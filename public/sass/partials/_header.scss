@@ -1,9 +1,47 @@
-ul{ font-size: .7em;
-    text-transform: uppercase;
-  li {
-    padding-left: 1em;
-    padding-right: 1em;
-    float: right;
-    display: inline;
+header {
+  background-color: $background-color-dark;
+}
+
+h1 {
+  color: $text-color-light;
+  font-size: 1.5em;
+  padding-bottom: 1em;
+  text-align: center;
+}
+ul li {
+    color: $text-color-light;
+}
+
+input[type=checkbox] {
+  display: none;
+}
+.icon-menu:before {
+  color: white;
+}
+
+@media only screen and (min-width: 600px) {
+  .icon-menu {
+    display: none;
   }
+  h1 {
+    position: absolute;
+    padding-top: 1.9em;
+    padding-left: 1.9em;
+    padding-bottom: 1.9em;
+  }
+  ul {
+    position: relative;
+    padding-top: 5em;
+    padding-right: 5em;
+    padding-bottom: 5em;
+    font-size: .7em;
+    text-transform: uppercase;
+    li {
+      padding-left: 1em;
+      padding-right: 1em;
+      float: right;
+      display: inline;
+    }
+  }
+
 }
