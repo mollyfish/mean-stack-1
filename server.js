@@ -1,20 +1,129 @@
 var express = require('express');
+var mongoose = require("mongoose");
+var bodyParser = require("body-parser");
+var Player = require("./models/player");
+
+mongoose.connect("mongodb://localhost/CRUDblog")
+
 var app = express();
-app.use(express.static(__dirname + '/public'));
-app.get('/', function(req, res){
-  res.status(200).sendFile('public/index.html', {root: __dirname + '/'});
-});
-app.get('/index*', function(req, res){
-  res.status(200).sendFile('public/index.html', {root: __dirname + '/'});
-});
-app.get('/*', function(req, res){
-  res.status(404).sendFile('public/404.html', {root: __dirname + '/'});
-});
-
 var port = process.env.PORT || 3000;
+var router = express.Router();
 
-var server = app.listen(port, 'localhost', function() {
-  var host = server.address().address;
-  var port = server.address().port;
-  console.log('Server running on: http://localhost:%s',port);
+app.use(bodyParser.json());
+
+// Root route
+router.get("/", function (req, res) {
+  res.sendFile(__dirname + "/src/app/index.html");
 });
+
+// All assets
+router.get("/assets/*", function (req, res) {
+  path = req.path.replace(/^\/assets/,'');
+  if (path.match(/node_modules/)) {
+    res.sendFile(__dirname + path);
+  } else {
+    res.sendFile(__dirname + "/public/" + path);
+  }
+});
+
+// Register the router with the application
+app.use("/", router);
+
+// Create a new route with prefix /players
+var playersRoute = router.route("/api/players");
+
+// READ
+
+// Create endpoint /api/players for POST
+playersRoute.post(function (req, res) {
+  // Create a new instance of the Player model
+  var player = new Player();
+
+  // Set the player properties that came from the POST data
+  player.name = req.body.name;
+  player.team = req.body.team;
+  player.number = req.body.number;
+  player.position = req.body.position;
+
+  // Save the player and check for errors
+  player.save(function (err) {
+    if (err) {
+      res.send(err);
+    }
+
+    res.json(player);
+  });
+});
+
+// Create endpoint /api/players for GET
+playersRoute.get(function(req, res) {
+  // Use the Player model to find all players
+  Player.find(function (err, players) {
+    if (err) {
+      res.send(err);
+    }
+
+    res.json(players);
+  });
+});
+
+// CREATE
+
+// Create a new route for /players/:player_id
+var playerRoute = router.route("/api/players/:player_id");
+
+
+// Create endpoint for /api/players/:playerID
+playerRoute.get(function(req, res) {
+  // Use the player model to find a specific player
+  Player.findById(req.params.player_id, function (err, player) {
+    if (err) {
+      res.send(err);
+    }
+
+    res.json(player);
+  });
+});
+
+// UPDATE
+
+// Change the player's number
+playerRoute.put(function(req, res) {
+  // Use the Player model to find a specific player
+  Player.findById(req.params.player_id, function (err, player) {
+    if (err) {
+      res.send(err);
+    }
+
+    // Update the player's number
+    player.name = req.body.name;
+    player.team = req.body.team;
+    player.number = req.body.number;
+    player.position = req.body.position;
+
+    // Save the player and check for errors
+    player.save(function (err) {
+      if (err) {
+        res.send(err);
+      }
+
+      res.json(player);
+    });
+  });
+});
+
+// DELETE
+
+// Create endpoint /api/players/:player_id for DELETE
+playerRoute.delete(function (req, res) {
+  // Use the player model to find a specific player and remove it
+  Player.findByIdAndRemove(req.params.player_id, function(err) {
+    if (err) {
+      res.send(err);
+    }
+
+    res.json({ message: "Successfully removed player." });
+  });
+});
+
+app.listen(port);
