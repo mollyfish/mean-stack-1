@@ -1,6 +1,6 @@
 .contact {
   // padding-bottom: 0.5em;
-  @include flex-container(flex,row,wrap,space-around);
+  @include flex-container(flex,row,wrap,space-around,center,center);
   text-align: center;
   .connection-links {
     margin: 1em 2em;

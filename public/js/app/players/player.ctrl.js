@@ -1,0 +1,1 @@
+angular.module("blog").controller("PlayerCtrl",["PlayersService","$routeParams",function(r,a){function e(){r.get(a.player_id).then(function(r){l.player=r.data})}var l=this;e()}]);
