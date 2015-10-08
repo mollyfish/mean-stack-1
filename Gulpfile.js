@@ -24,15 +24,19 @@ gulp.task("uglify", function () {
 
 gulp.task("build:js", ["jshint", "uglify"]);
 
-gulp.task("serve", ["build:css", "build:js"], function () {
-  // Start the server at the beginning of the task
-  server.run(["server.js"]);
+// gulp.task("serve", ["build:css", "build:js"], function () {
+//   // Start the server at the beginning of the task
+//   server.run(["server.js"]);
 
+//   // Update files when they change
+//   gulp.watch(["src/styles/**/*.scss"], ["build:css"]);
+//   gulp.watch(["src/app/**/*.js"], ["build:js"]);
+
+//   gulp.watch(["server.js"], [server.run]);
+// });
+
+gulp.task("default", ["build:css", "build:js"], function() {
   // Update files when they change
   gulp.watch(["src/styles/**/*.scss"], ["build:css"]);
   gulp.watch(["src/app/**/*.js"], ["build:js"]);
-
-  gulp.watch(["server.js"], [server.run]);
 });
-
-gulp.task("default", ["build:css", "serve"]);

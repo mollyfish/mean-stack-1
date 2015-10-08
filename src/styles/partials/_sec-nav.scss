@@ -34,7 +34,7 @@
   margin-left: 0.5em;
 }
 .secondary-nav__icon:before {
-  @include flex-container(flex,column,nowrap,center);
+  @include flex-container(flex,column,nowrap,center,center,center);
   font-size: 60%;
   border-radius: 50%;
   display: inline-block;

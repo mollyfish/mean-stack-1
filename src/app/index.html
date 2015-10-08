@@ -4,27 +4,48 @@
     <meta charset="UTF-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Crud Blog</title>
-    <link rel="stylesheet" href="/assets/styles/app.css">
-
-
-
-
-    
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="/assets/styles/app.css">
   </head>
   <body>
-    <header class="site-header">
-      <h1>Blog</h1>
-      <nav>
-        <ul>
-          <li><a href="#/">Home</a></li>
-          <li><a href="#">About</a></li>
-        </ul>
-      </nav>
+    <header>
+      <section>
+        <h1>intelly</h1>
+        <nav>
+          <label for="show-menu">
+            <span class="icon-menu3"></span>
+          </label>
+          <input type="checkbox" id="show-menu">
+          <ul>
+            <li><a href="#/">Home</a></li>
+            <li><a href="#">Pages</a></li>
+            <li><a href="#/">Blog</a></li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="#">Shortcodes</a></li>
+            <li><a href="#">Features</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+      </section>
     </header>
-
+    <section class="hero-box"> <!-- hero-box -->
+      <h1>Blog</h1>
+      <p>The secular cooling that must someday overtake our planet has already gone far indeed with our neighbour. Its physical condition is still largely a mystery, but we know now that even in its equatorial</p>
+    </section> <!-- ends hero-box -->
+    <nav class="secondary-nav">
+      <div class="secondary-nav__justify-L">
+        <a href="#/">Home</a>
+        <a href="#/">Blog</a>
+      </div>
+      <div class="secondary-nav__justify-R">
+        <p>Share</p>
+        <a href="http://www.twitter.com" class="icon-twitter secondary-nav__icon"></a>
+        <a href="http://www.facebook.com" class="icon-facebook secondary-nav__icon"></a>
+        <a href="https://plus.google.com/" class="icon-google-plus secondary-nav__icon"></a>
+        <a href="http://www.pinterest.com" class="icon-pinterest secondary-nav__icon"></a>
+      </div>
+    </nav><!-- end sec-nav -->
     <main ng-view></main>
 
     <script src="/assets/node_modules/angular/angular.js"></script>
@@ -40,13 +61,23 @@
 
     <!-- templates -->
     <script type="text/ng-template" id="partials/posts/posts_list.html">
-      <h1>List of posts!</h1>
-      <ul>
-        <li ng-repeat="post in vm.posts">
-          <a href="#/posts/{{post._id}}">{{post.title}}</a> (<button ng-click="vm.delete(post)">Delete</button>)
-        </li>
-      </ul>
-      <a href="#/posts/new">Add a new post</a>
+      <div class="previews">
+        <article ng-repeat="post in vm.posts">
+          <h1>{{post.title}}</h1>
+          <p>{{post.content}}</p>
+          <div class="post-data">
+            <ul>
+              <li>By {{post.author}}</li>
+              <li>{{post.date}}</li>
+              <li>{{post.comments}} comments</li>
+            </ul>
+            <a class="btn btn__text btn--dark" href="#/posts/{{post._id}}">Read More</a>
+          </div>
+          
+          (<button ng-click="vm.delete(post)">Delete</button>)
+        </article>
+        <a class="btn btn__text btn--light" href="#/posts/new">Add a new post</a>
+      </div>
     </script>
 
     <script type="text/ng-template" id="partials/posts/post_detail.html">
@@ -71,5 +102,39 @@
         <input type="submit" name="Submit">
       </form>
     </script>
+
+    <section class="feature-box"> <!-- feature-box -->
+      <h1>Serene in their assurance of their empire over matter</h1>
+      <p>No one would have believed in the last years of the nineteenth century that this world was being watched keenly and closely by intelligences greater than man’s and yet as more</p>
+      <a class="btn btn__text btn--theme">Contact Now</a>
+      <a class="btn btn__text btn--theme">Learn More</a>
+    </section> <!--  end feature-box -->
+    <aside class="contact"> <!-- cntact -->
+      <address class="contact__method"><a href="https://goo.gl/maps/C4Q1FUpTdJx">2319 Hilltop Haven Drive<br />Upper Greenwood Lake, NJ 07421</a></address>
+      <div class="contact__method">
+        <a href="tel:6624076792">662-407-6792</a>
+        <a href="mailto:contact@intell.com">contact@intell.com</a>
+      </div>
+      <div class="contact__method">
+        <a href="https://twitter.com/" class="connection-links connection-links__text">
+          <span class="icon-twitter connection-links__icon"></span>Follow Us
+        </a>
+        <a href="https://www.facebook.com/" class="connection-links connection-links__text">
+          <span class="icon-facebook connection-links__icon"></span>Like Us
+        </a>
+        <a href="https://www.linkedin.com/" class="connection-links connection-links__text">
+          <span class="icon-linkedin connection-links__icon"></span>Connect
+        </a>
+      </div>
+    </aside> <!-- ends contact -->
+    <footer>
+      <p>&#169 Intelly LLC</p>
+      <ul>
+        <li>Terms of use</li>
+        <li>Privacy Policy </li>
+        <li>Contact</li>
+        <li>Support</li>
+      </ul>
+    </footer>
   </body>
 </html>
