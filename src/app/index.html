@@ -80,28 +80,26 @@
     </script>
 
     <script type="text/ng-template" id="partials/posts/post_detail.html">
-      <!-- <pre>{{vm.post|json}}</pre> -->
-      <h1>{{vm.post.title}}</h1>
-      <p>{{vm.post.author}}</p>
-      <!--<post-details ng-model="vm.post"></post-details>-->
-      
-      <p>{{vm.post.content}}</p>
-      <ul>
-        <li>Published: {{vm.post.date}}</li>
-        <li>{{vm.post.comments}} comments</li>
-      </ul>
-
-      <a href="#/posts/{{vm.post._id}}/edit">Edit post</a>
+      <article class="post-detail">
+        <h1>{{vm.post.title}}</h1>
+        <ul class="post-data">
+          <li>By {{vm.post.author}}</li>
+          <li>{{vm.post.date}}</li>
+          <li>{{vm.post.comments}} comments</li>
+        </ul>
+        <p>{{vm.post.content}}</p>
+        <a class="btn btn__text btn--light" href="#/posts/{{vm.post._id}}/edit">edit this post</a>
+      </article>
     </script>
 
     <script type="text/ng-template" id="partials/posts/post_form.html">
-      <form id="post-form" ng-submit="vm.save()">
+      <form id="post-form" class="post-form" ng-submit="vm.save()">
         <input type="text" ng-model="vm.post.title" placeholder="Title" />
         <input type="text" ng-model="vm.post.author" placeholder="Author" />
         <input type="text" ng-model="vm.post.date" placeholder="Date" />
-        <textarea ng-model="vm.post.content" form="post-form" rows="20" cols="50"></textarea>
+        <textarea ng-model="vm.post.content" form="post-form" rows="15"></textarea>
         <input type="number" ng-model="vm.post.comments" placeholder="how many comments" />
-        <button type="submit" name="Submit">Submit</button>
+        <button type="submit" name="Submit" class="btn btn__text btn--light">Submit</button>
       </form>
     </script>
 
