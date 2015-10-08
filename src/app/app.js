@@ -1,7 +1,7 @@
 (function () {
   "use strict";
 
-  var app = angular.module("soccr", ["ngRoute"]);
+  var app = angular.module("blog", ["ngRoute"]);
 
   app.config(["$routeProvider", function ($routeProvider) {
     $routeProvider.when("/players", {

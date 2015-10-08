@@ -3,7 +3,7 @@ var mongoose = require("mongoose");
 var bodyParser = require("body-parser");
 var Player = require("./models/player");
 
-mongoose.connect("mongodb://localhost/CRUDblog")
+mongoose.connect("mongodb://localhost/blog")
 
 var app = express();
 var port = process.env.PORT || 3000;
