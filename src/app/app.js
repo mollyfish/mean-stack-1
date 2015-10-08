@@ -4,24 +4,24 @@
   var app = angular.module("blog", ["ngRoute"]);
 
   app.config(["$routeProvider", function ($routeProvider) {
-    $routeProvider.when("/players", {
-      templateUrl: "partials/players/players_list.html",
-      controller: "PlayersCtrl as vm",
+    $routeProvider.when("/posts", {
+      templateUrl: "partials/posts/posts_list.html",
+      controller: "PostsCtrl as vm",
     })
-    .when("/players/new", {
-      templateUrl: "partials/players/player_form.html",
-      controller: "PlayerFormCtrl as vm",
+    .when("/posts/new", {
+      templateUrl: "partials/posts/post_form.html",
+      controller: "PostFormCtrl as vm",
     })
-    .when("/players/:player_id/edit", {
-      templateUrl: "partials/players/player_form.html",
-      controller: "PlayerFormCtrl as vm",
+    .when("/posts/:post_id/edit", {
+      templateUrl: "partials/posts/post_form.html",
+      controller: "PostFormCtrl as vm",
     })
-    .when("/players/:player_id", {
-      templateUrl: "partials/players/player_detail.html",
-      controller: "PlayerCtrl as vm",
+    .when("/posts/:post_id", {
+      templateUrl: "partials/posts/post_detail.html",
+      controller: "PostCtrl as vm",
     })
     .otherwise({
-      redirectTo: "/players",
+      redirectTo: "/posts",
     });
   }]);
 }());

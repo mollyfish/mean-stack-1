@@ -1,10 +1,10 @@
 (function () {
   "use strict";
 
-  angular.module("soccr").service("PlayersService", ["$http", function ($http) {
-    var urlRoot = "/api/players";
+  angular.module("blog").service("PostsService", ["$http", function ($http) {
+    var urlRoot = "/api/posts";
 
-    var Player = {
+    var Post = {
       get: function (id) {
         if (angular.isDefined(id)) {
           return $http.get(urlRoot + "/" + id);
@@ -22,6 +22,6 @@
         return $http.delete(urlRoot + "/" + model._id);
       }
     };
-    return Player;
+    return Post;
   }]);
 }());

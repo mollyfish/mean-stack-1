@@ -1,7 +1,7 @@
 var express = require('express');
 var mongoose = require("mongoose");
 var bodyParser = require("body-parser");
-var Player = require("./models/player");
+var Post = require("./models/post");
 
 mongoose.connect("mongodb://localhost/blog")
 
@@ -29,100 +29,102 @@ router.get("/assets/*", function (req, res) {
 // Register the router with the application
 app.use("/", router);
 
-// Create a new route with prefix /players
-var playersRoute = router.route("/api/players");
+// Create a new route with prefix /posts
+var postsRoute = router.route("/api/posts");
 
 // READ
 
-// Create endpoint /api/players for POST
-playersRoute.post(function (req, res) {
-  // Create a new instance of the Player model
-  var player = new Player();
+// Create endpoint /api/posts for POST
+postsRoute.post(function (req, res) {
+  // Create a new instance of the Post model
+  var post = new Post();
 
-  // Set the player properties that came from the POST data
-  player.name = req.body.name;
-  player.team = req.body.team;
-  player.number = req.body.number;
-  player.position = req.body.position;
+  // Set the post properties that came from the POST data
+  post.title = req.body.title;
+  post.content = req.body.content;
+  post.author = req.body.author;
+  post.date = req.body.date;
+  post.comments = req.body.comments;
 
-  // Save the player and check for errors
-  player.save(function (err) {
+  // Save the post and check for errors
+  post.save(function (err) {
     if (err) {
       res.send(err);
     }
 
-    res.json(player);
+    res.json(post);
   });
 });
 
-// Create endpoint /api/players for GET
-playersRoute.get(function(req, res) {
-  // Use the Player model to find all players
-  Player.find(function (err, players) {
+// Create endpoint /api/posts for GET
+postsRoute.get(function(req, res) {
+  // Use the Post model to find all posts
+  Post.find(function (err, posts) {
     if (err) {
       res.send(err);
     }
 
-    res.json(players);
+    res.json(posts);
   });
 });
 
 // CREATE
 
-// Create a new route for /players/:player_id
-var playerRoute = router.route("/api/players/:player_id");
+// Create a new route for /posts/:post_id
+var postRoute = router.route("/api/posts/:post_id");
 
 
-// Create endpoint for /api/players/:playerID
-playerRoute.get(function(req, res) {
-  // Use the player model to find a specific player
-  Player.findById(req.params.player_id, function (err, player) {
+// Create endpoint for /api/posts/:postID
+postRoute.get(function(req, res) {
+  // Use the post model to find a specific post
+  Post.findById(req.params.post_id, function (err, post) {
     if (err) {
       res.send(err);
     }
 
-    res.json(player);
+    res.json(post);
   });
 });
 
 // UPDATE
 
-// Change the player's number
-playerRoute.put(function(req, res) {
-  // Use the Player model to find a specific player
-  Player.findById(req.params.player_id, function (err, player) {
+// Change the post's stuff
+postRoute.put(function(req, res) {
+  // Use the Post model to find a specific post
+  Post.findById(req.params.post_id, function (err, post) {
     if (err) {
       res.send(err);
     }
 
-    // Update the player's number
-    player.name = req.body.name;
-    player.team = req.body.team;
-    player.number = req.body.number;
-    player.position = req.body.position;
+    // Update the post's title
+    post.title = req.body.title;
+    post.content = req.body.content;
+    post.author = req.body.author;
+    post.date = req.body.date;
+    post.comments = req.body.comments;
 
-    // Save the player and check for errors
-    player.save(function (err) {
+    // Save the post and check for errors
+    post.save(function (err) {
       if (err) {
         res.send(err);
       }
 
-      res.json(player);
+      res.json(post);
     });
   });
 });
 
 // DELETE
 
-// Create endpoint /api/players/:player_id for DELETE
-playerRoute.delete(function (req, res) {
-  // Use the player model to find a specific player and remove it
-  Player.findByIdAndRemove(req.params.player_id, function(err) {
+// Create endpoint /api/posts/:post_id for DELETE
+postRoute.delete(function (req, res) {
+  // Use the post model to find a specific post and remove it
+  Post.findByIdAndRemove(req.params.post_id, function(err) {
     if (err) {
       res.send(err);
     }
 
-    res.json({ message: "Successfully removed player." });
+    res.json({ message: "Successfully removed post." });
   });
 });
 
