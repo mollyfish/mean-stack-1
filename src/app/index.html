@@ -64,7 +64,7 @@
       <div class="previews">
         <article ng-repeat="post in vm.posts">
           <h1>{{post.title}}</h1>
-          <p>{{post.content}}</p>
+          <p>{{post.content | limitTo: 370}}</p>
           <div class="post-data">
             <ul>
               <li>By {{post.author}}</li>
@@ -73,8 +73,7 @@
             </ul>
             <a class="btn btn__text btn--dark" href="#/posts/{{post._id}}">Read More</a>
           </div>
-          
-          (<button ng-click="vm.delete(post)">Delete</button>)
+          <button ng-click="vm.delete(post)">(delete this post)</button>
         </article>
         <a class="btn btn__text btn--light" href="#/posts/new">Add a new post</a>
       </div>
@@ -93,11 +92,11 @@
     </script>
 
     <script type="text/ng-template" id="partials/posts/post_form.html">
-      <form ng-submit="vm.save()">
+      <form id="post-form" ng-submit="vm.save()">
         <input type="text" ng-model="vm.post.title" placeholder="Title" />
         <input type="text" ng-model="vm.post.author" placeholder="Author" />
         <input type="text" ng-model="vm.post.date" placeholder="Date" />
-        <input type="text" ng-model="vm.post.content" placeholder="Post text" />
+        <textarea ng-model="vm.post.content" form="post-form" rows="10" cols="50">Write something here</textarea>
         <input type="number" ng-model="vm.post.comments" placeholder="how many comments" />
         <input type="submit" name="Submit">
       </form>

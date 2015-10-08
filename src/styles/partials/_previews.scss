@@ -26,6 +26,7 @@
     margin-top: 1em;
     &.btn--light {
       width: 15em;
+      margin-top: 1em;
     }
     @include breaks(desktop) {
       width: 10em;
@@ -33,7 +34,7 @@
     }
   }
   button[ng-click="vm.delete(post)"] {
-    color: red;
+    font-size: 30%;
   }
   ul {
     @include flex-container(flex,row,wrap,center,center,center);
