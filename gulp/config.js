@@ -15,10 +15,15 @@ module.exports = {
       indentedSyntax: true,
     }
   },
+  markup: {
+    src: src + "/app/**/*.html",
+    dest: dest + "/views/",
+  },
   server: {
     serverFile: './server.js'
   },
   production: {
+    htmlSrc: src + '/app/**/*.html',
     cssSrc: dest + '/styles/*.css',
     jsSrc: dest + '/*.js',
     dest: dest

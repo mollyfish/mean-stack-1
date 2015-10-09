@@ -6,8 +6,9 @@ require('../app');
   angular.module("blog").directive("postDetails", function () {
     return {
       scope: {
-        ngModel: "=", // ng-model
-      }
+        post: "=post",
+      },
+      templateUrl: 'views/post/post_details.html',
     };
   });
 }());
