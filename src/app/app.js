@@ -1,6 +1,4 @@
 require('angular');
-require('angular-route');
-require('./posts');
 
 (function () {
   "use strict";
@@ -29,3 +27,6 @@ require('./posts');
     });
   }]);
 }());
+
+require('angular-route');
+require('./posts/index.js');

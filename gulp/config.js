@@ -5,7 +5,7 @@ module.exports = {
   javascript: {
     src: src + '/app/**/*.js',
     dest: dest + '/js/',
-    entryPoint: src + '/app/webpack-entry.js',
+    entryPoint: src + '/webpack-entry.js',
     packedFile: 'packed.js'
   },
   sass: {
@@ -19,7 +19,7 @@ module.exports = {
     serverFile: './server.js'
   },
   production: {
-    cssSrc: dest+ '/styles/*.css',
+    cssSrc: dest + '/styles/*.css',
     jsSrc: dest + '/*.js',
     dest: dest
   }
