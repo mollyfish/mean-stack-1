@@ -1,1 +1,0 @@
-!function(){"use strict";angular.module("blog").service("PostsService",["$http",function(t){var e="/api/posts",n={get:function(n){return angular.isDefined(n)?t.get(e+"/"+n):t.get(e)},update:function(n){return t.put(e+"/"+n._id,n)},create:function(n){return t.post(e,n)},"delete":function(n){return t["delete"](e+"/"+n._id)}};return n}])}();
