@@ -1,7 +1,7 @@
 <form class="post-form" ng-submit="vm.save()" ng-controller="DateCtrl">
   <input type="text" ng-model="vm.post.title" placeholder="Title" />
   <input type="text" ng-model="vm.post.author" placeholder="Author" />
-  <input id="date-birth" class="form-control" type="date" ng-model="vm.post.date">
+  <input class="form-control" type="date" ng-model="vm.post.date">
   <textarea ng-model="vm.post.content" form="post-form" rows="15"></textarea>
   <input type="number" ng-model="vm.post.comments" placeholder="how many comments" />
   <button type="submit" name="Submit" class="btn btn__text btn--light">Submit</button>

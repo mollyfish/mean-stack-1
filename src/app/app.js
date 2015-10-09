@@ -1,4 +1,5 @@
 require('angular');
+require('angular-route');
 
 (function () {
   "use strict";
@@ -33,5 +34,5 @@ require('angular');
   ]);
 }());
 
-require('angular-route');
+
 require('./index.js');
