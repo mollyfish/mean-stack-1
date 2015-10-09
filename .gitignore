@@ -1,6 +1,4 @@
-*/css/**/*.css
 node_modules/
 .DS_Store
-*testing/*
-
-
+/public/js/*
+/public/styles/app.css
