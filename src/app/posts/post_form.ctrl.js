@@ -12,23 +12,18 @@ require('../app');
     initialize();
 
     function initialize () {
+      vm.post.date = new Date(Date.now());
       if ($routeParams.post_id) {
         PostsService.get($routeParams.post_id).then(function (resp) {
           vm.post = resp.data;
+          vm.post.date = vm.post.date || new Date(Date.now());
         });
       }
+
     }
 
     function saveForm () {
       var method;
-
-      // if (angular.isDefined(vm.post.author)) {
-      //   vm.post.author = parseInt(vm.post.author, 10);
-      // }
-
-      // if (angular.isDefined(vm.post.date)) {
-      //   vm.post.date = date | yyyy-MM-dd);
-      // }
 
       method = $routeParams.post_id ? "update" : "create";
       PostsService[method](vm.post).then(function (resp) {
