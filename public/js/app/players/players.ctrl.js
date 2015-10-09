@@ -1,1 +1,0 @@
-!function(){"use strict";angular.module("blog").controller("PlayersCtrl",["PlayersService",function(e){function n(){t()}function t(){e.get().then(function(e){o.players=e.data})}function l(n){e["delete"](n).then(function(){t()})}var o=this;o.players=[],o["delete"]=l,n()}])}();
