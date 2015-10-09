@@ -1,0 +1,16 @@
+<div class="previews">
+  <article ng-repeat="post in vm.posts">
+    <h1>{{post.title}}</h1>
+    <p>{{post.content | limitTo: 370}}</p>
+    <div class="post-data">
+      <ul>
+        <li>By {{post.author}}</li>
+        <li>{{post.date | date: 'MMM dd, yyyy'}}</li>
+        <li>{{post.comments}} comments</li>
+      </ul>
+      <a class="btn btn__text btn--dark" href="#/posts/{{post._id}}">Read More</a>
+    </div>
+    <button ng-click="vm.delete(post)">(delete this post)</button>
+  </article>
+  <a class="btn btn__text btn--light" href="#/posts/new">Add a new post</a>
+</div>

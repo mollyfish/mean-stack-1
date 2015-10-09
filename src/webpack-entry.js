@@ -1,2 +1,2 @@
 require('./app/app.js');
-require('./app/posts/');
+require('./app/index.js');
