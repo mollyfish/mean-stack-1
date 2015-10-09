@@ -15,7 +15,7 @@ module.exports = {
       indentedSyntax: true,
     }
   },
-  markup: {
+  html: {
     src: src + "/app/**/*.html",
     dest: dest + "/views/",
   },
