@@ -23,7 +23,6 @@ module.exports = {
     serverFile: './server.js'
   },
   production: {
-    htmlSrc: src + '/app/**/*.html',
     cssSrc: dest + '/styles/*.css',
     jsSrc: dest + '/*.js',
     dest: dest
