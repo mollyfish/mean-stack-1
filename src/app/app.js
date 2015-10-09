@@ -26,6 +26,11 @@ require('angular');
       redirectTo: "/posts",
     });
   }]);
+
+  app.controller('DateCtrl', ['$scope', function($scope) {
+      $scope.date = new Date();
+    }
+  ]);
 }());
 
 require('angular-route');

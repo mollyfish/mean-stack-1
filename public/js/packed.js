@@ -80,6 +80,11 @@
 	      redirectTo: "/posts",
 	    });
 	  }]);
+
+	  app.controller('DateCtrl', ['$scope', function($scope) {
+	      $scope.date = new Date();
+	    }
+	  ]);
 	}());
 
 	__webpack_require__(4);
@@ -30143,6 +30148,10 @@
 
 	      // if (angular.isDefined(vm.post.author)) {
 	      //   vm.post.author = parseInt(vm.post.author, 10);
+	      // }
+
+	      // if (angular.isDefined(vm.post.date)) {
+	      //   vm.post.date = date | yyyy-MM-dd);
 	      // }
 
 	      method = $routeParams.post_id ? "update" : "create";

@@ -26,6 +26,10 @@ require('../app');
       //   vm.post.author = parseInt(vm.post.author, 10);
       // }
 
+      // if (angular.isDefined(vm.post.date)) {
+      //   vm.post.date = date | yyyy-MM-dd);
+      // }
+
       method = $routeParams.post_id ? "update" : "create";
       PostsService[method](vm.post).then(function (resp) {
         $location.path("/posts/" + resp.data._id);

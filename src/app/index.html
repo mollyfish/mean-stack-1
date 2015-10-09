@@ -59,7 +59,7 @@
           <div class="post-data">
             <ul>
               <li>By {{post.author}}</li>
-              <li>{{post.date}}</li>
+              <li>{{post.date | date: 'MMM dd, yyyy'}}</li>
               <li>{{post.comments}} comments</li>
             </ul>
             <a class="btn btn__text btn--dark" href="#/posts/{{post._id}}">Read More</a>
@@ -75,7 +75,7 @@
         <h1>{{vm.post.title}}</h1>
         <ul class="post-data">
           <li>By {{vm.post.author}}</li>
-          <li>{{vm.post.date}}</li>
+          <li>{{vm.post.date | date: 'MMM dd, yyyy'}}</li>
           <li>{{vm.post.comments}} comments</li>
         </ul>
         <p>{{vm.post.content}}</p>
@@ -84,10 +84,13 @@
     </script>
 
     <script type="text/ng-template" id="partials/posts/post_form.html">
-      <form id="post-form" class="post-form" ng-submit="vm.save()">
+
+
+
+      <form id="post-form" class="post-form" ng-submit="vm.save()" ng-controller="DateCtrl">
         <input type="text" ng-model="vm.post.title" placeholder="Title" />
         <input type="text" ng-model="vm.post.author" placeholder="Author" />
-        <input type="text" ng-model="vm.post.date" placeholder="Date" />
+        <input id="date-birth" class="form-control" type="date" ng-model="vm.post.date">
         <textarea ng-model="vm.post.content" form="post-form" rows="15"></textarea>
         <input type="number" ng-model="vm.post.comments" placeholder="how many comments" />
         <button type="submit" name="Submit" class="btn btn__text btn--light">Submit</button>
