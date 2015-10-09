@@ -80,6 +80,11 @@
 	      redirectTo: "/posts",
 	    });
 	  }]);
+
+	  app.controller('DateCtrl', ['$scope', function($scope) {
+	      $scope.date = new Date();
+	    }
+	  ]);
 	}());
 
 	__webpack_require__(4);
@@ -30131,19 +30136,18 @@
 	    initialize();
 
 	    function initialize () {
+	      vm.post.date = new Date(Date.now());
 	      if ($routeParams.post_id) {
 	        PostsService.get($routeParams.post_id).then(function (resp) {
 	          vm.post = resp.data;
+	          vm.post.date = vm.post.date || new Date(Date.now());
 	        });
 	      }
+
 	    }
 
 	    function saveForm () {
 	      var method;
-
-	      // if (angular.isDefined(vm.post.author)) {
-	      //   vm.post.author = parseInt(vm.post.author, 10);
-	      // }
 
 	      method = $routeParams.post_id ? "update" : "create";
 	      PostsService[method](vm.post).then(function (resp) {
