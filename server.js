@@ -17,14 +17,7 @@ router.get("/", function (req, res) {
 });
 
 // All assets
-router.get("/assets/*", function (req, res) {
-  path = req.path.replace(/^\/assets/,'');
-  if (path.match(/node_modules/)) {
-    res.sendFile(__dirname + path);
-  } else {
-    res.sendFile(__dirname + "/public/" + path);
-  }
-});
+app.use(express.static(__dirname + "/public"));
 
 // Register the router with the application
 app.use("/", router);
@@ -129,4 +122,4 @@ postRoute.delete(function (req, res) {
 });
 
 app.listen(port);
-console.log('server is running');
+console.log('server is running on localhost//:' + port);

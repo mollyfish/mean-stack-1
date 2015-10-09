@@ -1,1 +1,0 @@
-angular.module("blog").controller("PostCtrl",["PostsService","$routeParams",function(t,o){function n(){t.get(o.post_id).then(function(t){r.post=t.data})}var r=this;n()}]);

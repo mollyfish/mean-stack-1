@@ -1,1 +1,0 @@
-!function(){"use strict";angular.module("blog").service("PlayersService",["$http",function(e){var t="/api/players",n={get:function(n){return angular.isDefined(n)?e.get(t+"/"+n):e.get(t)},update:function(n){return e.put(t+"/"+n._id,n)},create:function(n){return e.post(t,n)},"delete":function(n){return e["delete"](t+"/"+n._id)}};return n}])}();
