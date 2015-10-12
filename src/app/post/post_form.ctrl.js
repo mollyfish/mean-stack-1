@@ -12,11 +12,11 @@ require('../app');
     initialize();
 
     function initialize () {
-      vm.post.date = new Date(Date.now());
+      vm.post.date = new Date();
       if ($routeParams.post_id) {
         PostsService.get($routeParams.post_id).then(function (resp) {
           vm.post = resp.data;
-          vm.post.date = vm.post.date || new Date(Date.now());
+          vm.post.date = vm.post.date || new Date();
         });
       }
 
